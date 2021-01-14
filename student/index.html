@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student grade</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    
+</head>
+<body>
+    
+    <div class="hak">
+      
+        <div class="main">
+            <h1>Student Grade</h1>
+            <div class="row">
+                <div class="col-6">
+                    <div class="img">
+                        <img src="s.png" alt="">
+                     </div>
+                </div>
+                <div class="col-6">
+                    <div class="form">
+                        <div class="myan">
+                            <input type="text" id="myan" placeholder="Myanmar">
+                          </div>
+                          <div class="eng">
+                             <input type="text" id="eng" placeholder="English">
+                           </div>
+                           <div class="math">
+                             <input type="text" id="math" placeholder="Math">
+                           </div>
+                           <div class="chem">
+                             <input type="text" id="chem" placeholder="Chemistry">
+                           </div>
+                           <div class="phys">
+                             <input type="text" id="phys" placeholder="Physics">
+                           </div>
+                           <div class="bio">
+                             <input type="text" id="bio" placeholder="Biology">
+                           </div>
+                           <div class="btn">
+                               <button class="btn1" onclick="calc()">Result</button>
+                           </div>
+                    
+                    </div>
+                </div>
+            </div>
+           
+                   
+                  
+                    <div class="result">
+                        <p id="showdata"></p>
+                      </div>
+                   
+            
+        </div>
+        
+    </div>
+   
+  <script>
+     function calc (){
+         let myan = document.getElementById("myan").value;
+         let eng = document.getElementById("eng").value;
+         let math = document.getElementById("math").value;
+         let chem = document.getElementById("chem").value;
+         let phys = document.getElementById("phys").value;
+         let bio = document.getElementById("bio").value;
+         let grade = "";
+
+         const total = parseFloat(myan)+parseFloat(eng)+parseFloat(math)+parseFloat(chem)+parseFloat(phys)+parseFloat(bio);
+        
+
+         let per = parseInt((total/600)*100);
+       
+          
+         if(per<=100 && per>=80){
+             grade = "A";;
+         }else if(per<=80 && per>=60){
+             grade = 'B';
+         }
+         else if(per<=60 && per>40){
+             grade = 'C';
+         }
+         else{
+             grade = 'D';
+         }
+
+         document.querySelector("#showdata").innerHTML = `"Your total mark is ${total} , percentage is ${per}% and your grade is ${grade} "`
+          
+     }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+
+</body>
+</html>
